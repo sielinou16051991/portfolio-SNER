@@ -50,12 +50,14 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
+    console.log(formData);
     fetch(action, {
       method: 'POST',
       body: formData,
       headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
     .then(response => {
+      console.log(response);
       if( response.ok ) {
         return response.text();
       } else {
